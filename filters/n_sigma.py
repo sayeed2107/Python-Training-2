@@ -23,4 +23,4 @@ def nsigma(ts: np.ndarray, n: int = 3) -> np.ndarray:
 
     ts_filtered[~condition, 1] = np.nan
 
-    return(ts_filtered)
+    return ts_filtered

@@ -13,6 +13,8 @@ arr: np.ndarray = np.loadtxt("data/MLTempDataset1.csv", delimiter=",", dtype=obj
 ts: np.ndarray = arr[1:,1:] 
 ts[:,1:] = ts[:,1:].astype(float)
 
+print(ts)
+
 # Фильтр "правило трех\n сигм"
 ts_nsigma: np.ndarray = nsigma(ts, 3)
 
@@ -28,7 +30,6 @@ ts_time_avg: np.ndarray = time_avg(ts, window=3)
 # Фильтр "z-score"
 ts_z_score: np.ndarray = zet_score(ts)
 
-
-
-
-
+print(ts_z_score)
+print(max(ts_z_score[:,1]))
+print(min(ts_z_score[:,1]))

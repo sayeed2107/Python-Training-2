@@ -18,6 +18,8 @@ def zet_score(ts: np.ndarray) -> np.ndarray:
     se_z: float = std / (n ** 0.5) # скобки для читабельности
     
     for i in range(n):
-        ts_filtred[i][1] = float((ts_filtred[i][1] - temp_avg) / se_z)
-
+        ts_filtred[i][1] = float((ts_filtred[i][1] - temp_avg) / std)
+    
+    # TODO Заменить все что больше 3 и меньше -3 на nan, вернуть оригинальный вектор
+    
     return ts_filtred
